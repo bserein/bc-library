@@ -29,7 +29,8 @@ app.get("/", (request, response) => {//the '/' means root
     snapshot.forEach(doc => {
         users.push({id: doc.id, ...doc.data()})// ... is the spread operator
     })
-      response.send(snapshot.docs);
+      response.send(users); //snapshot.docs if you response send this it will return all the info related to firebase
+                            // when you put users this returns the info from the database to the user and returns the info that you requested
   });
  // response.send("Hello World!"); //commenting this out so it doesnt go through
 });
