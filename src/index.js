@@ -69,7 +69,7 @@ app.post("/users", (req, res) => {
 
   const result = `My name is ${user.name}, I am ${user.age} years old and my email is ${user.email}`; //once completed this will output
 
-  res.send(result); //this will console log the result of your info
+  res.send(result); ////sending information back to user
 });
 
 app.listen(3000, () => {
