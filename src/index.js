@@ -14,6 +14,13 @@ const db = getFirestore();
 const app = express();
 app.use(express.json()); //you need to add this to allow the api to read the json file from postman - so express is expecting a json file
 
+
+//Now add in to get all users currently in our firestore database and see it in web.  Getting info
+//from user input (in this case we use Postman as mock front end).  getting the info and sending it
+//it back.
+
+//getting all users from collection.  resolve promise by giving snapshot of the collection.
+
 app.get("/", (request, response) => {//the '/' means root
   const userCollection = db.collection("users");
 
@@ -26,6 +33,19 @@ app.get("/", (request, response) => {//the '/' means root
   });
  // response.send("Hello World!"); //commenting this out so it doesnt go through
 });
+
+//Below shows using get on further endpoint of web Browser
+// app.get("/users", (request, response) => {
+//   response.send("Here is your user list"); //response sent back to user.
+// });
+
+//now use post app
+//whatever you send(true for push and patch too) as the body
+//"/" the route from local computer
+
+//in post, we are getting something from user..ie. username and password.  then we need to check if
+//its verified and allow them access
+
 
 app.post("/users", (req, res) => {
   // using daries method you would have to put req or res here
