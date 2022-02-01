@@ -4,7 +4,7 @@ const {initializeApp, applicationDefault, cert } = require("firebase-admin/app")
 const { getFirestore, Timestamp, FieldValue } = require("firebase-admin/firestore");
 
 const credentials = require("../credentials.json"); //you use two .. to go back to to go into the bc-library folder to acces credentials
-
+                            //dont forget you need to go to package.json and edit the main to put src/index.js
 initializeApp({
   credential: cert(credentials),
 });
